@@ -5,7 +5,6 @@ public class Biblophile {
 
     private ArrayList<Book> collection;
 
-
     public Biblophile(){
         this.collection = new ArrayList<Book>();
     }
@@ -14,7 +13,8 @@ public class Biblophile {
         return this.collection.size();
     }
 
-    public void addBook(Book book) {
+    public void borrowsBookFromLibrary(Library library) {
+        Book book = library.loanBook(book);
         this.collection.add(book);
     }
 }

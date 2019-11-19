@@ -19,4 +19,8 @@ public class Library {
         if(this.collection.size() < this.capacity)
         this.collection.add(book);
     }
+    public Book loanBook(Book book){
+        this.collection.add(book);
+        return this.collection.remove(0);
+    }
 }
