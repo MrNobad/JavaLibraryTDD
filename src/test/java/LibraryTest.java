@@ -9,12 +9,16 @@ public class LibraryTest {
 
     private Library library;
     private Book book;
+    private Book book1;
+    private Book book2;
 
 
     @Before
     public void before(){
-        library = new Library();
+        library = new Library(2);
         book = new Book();
+        book1 = new Book();
+        book2 = new Book();
     }
 
     @Test
@@ -23,11 +27,19 @@ public class LibraryTest {
     }
 
     @Test
-    public void libraryHasBooks(){
+    public void addsBooksToLibrary(){
         library.addBook(book);
-        library.addBook(book);
-        library.addBook(book);
-        assertEquals(3, library.bookCount());
+        assertEquals(1, library.bookCount());
     }
+
+    @Test
+    public void libraryCantAddBooks(){
+        library.addBook(book);
+        library.addBook(book1);
+        library.addBook(book2);
+        assertEquals(2, library.bookCount());
+    }
+
+
 
 }

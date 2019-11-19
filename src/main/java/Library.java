@@ -3,10 +3,12 @@ import java.util.ArrayList;
 
 public class Library {
 
+    private int capacity;
     private ArrayList<Book> collection;
 
-    public Library(){
+    public Library(int capacity){
         this.collection = new ArrayList<Book>();
+        this.capacity = capacity;
     }
 
     public int bookCount() {
@@ -14,6 +16,7 @@ public class Library {
     }
 
     public void addBook(Book book){
+        if(this.collection.size() < this.capacity)
         this.collection.add(book);
     }
 }
